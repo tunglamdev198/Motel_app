@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lamnt.motel">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".view.activity.EditRoomActivity"></activity>
+        <activity android:name=".view.activity.ContractDetailActivity" />
+        <activity android:name=".view.activity.OptionActivity">
+        </activity>
+        <activity android:name=".view.activity.RootActivity" />
+        <activity android:name=".view.activity.HomePageGuestActivity" />
+        <activity android:name=".view.activity.GuestLoginActivity" />
+        <activity
+            android:name=".view.activity.AddTermsActivity"
+            android:label="Nội quy"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+        <activity android:name=".view.activity.ListBillActivity" />
+        <activity android:name=".view.activity.UserActivity" />
+        <activity
+            android:name=".view.activity.AddContractActivity"
+            android:label="Hợp đồng"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+        <activity android:name=".view.activity.ListContractActivity" />
+        <activity
+            android:name=".view.activity.AddServiceActivity"
+            android:label="Dịch vụ"
+            android:theme="@style/Theme.AppCompat.DayNight.Dialog.Alert" />
+        <activity android:name=".view.activity.AddRoomActivity" />
+        <activity android:name=".view.activity.RoomDetailActivity" />
+        <activity android:name=".view.activity.RegisterActivity" />
+        <activity android:name=".view.activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.TermActivity" />
+        <activity android:name=".view.activity.ServiceActivity" />
+        <activity android:name=".view.activity.BillActivity" />
+        <activity android:name=".view.fragment.NotificationActivity" />
+        <activity android:name=".view.activity.RoomManagerActivity" />
+        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.CustomerActivity" />
+
+
+        <receiver android:name=".receiver.ConnectivityChangeReceiver">
+            <intent-filter >
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

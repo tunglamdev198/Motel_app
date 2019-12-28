@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#c4302b</color>
+    <color name="colorPrimaryDark">#c4302b</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBackGround">#E53935</color>
+
+    <color name="cardViewGreen">#5DFF83</color>
+    <color name="cardViewYellow">#F8FF3A</color>
+    <color name="cardViewPink">#FF8E8E</color>
+    <color name="cardViewBlue">#3BF6E3</color>
+    <color name="cardViewOrange">#F8B13B</color>
+    <color name="cardViewPurple">#6E55A5</color>
+
+    <color name="colorFab">#260EFC</color>
+    <color name="colorTextPrice">#F7B506</color>
+</resources>

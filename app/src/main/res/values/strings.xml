@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Motel</string>
+    <string name="register">Bạn chưa có tài khoản?</string>
+    <string name="forgot_password">Quên mật khẩu</string>
+</resources>

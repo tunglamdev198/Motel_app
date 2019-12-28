@@ -1,0 +1,74 @@
+package com.lamnt.googlemapsample;
+
+import android.content.Context;
+import android.content.IntentSender;
+import android.graphics.Color;
+import android.location.Location;
+import android.support.annotation.NonNull;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.TextView;
+
+import com.google.android.gms.common.api.ResolvableApiException;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.location.SettingsClient;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.Circle;
+import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+
+public class MapManager implements GoogleMap.OnMyLocationButtonClickListener {
+
+    private static final String TAG = "MapManager";
+
+    private Context context;
+
+    private GoogleMap googleMap;
+
+    private FusedLocationProviderClient client;
+
+    private LocationRequest locationRequest; // Là đối tượng chứa các thông tin về GPS
+
+    private LocationCallback locationCallback;
+
+    private Location myLocation;
+
+    private Marker myMarker;
+
+    private Circle circle;
+
+    public MapManager(GoogleMap googleMap, Context context) {
+        this.googleMap = googleMap;
+        this.context = context;
+        client = new FusedLocationProviderClient(context);
+        locationRequest = new LocationRequest();
+        locationRequest.setInterval(10000); // Cập nhật request sau một khoảng thời gian
+        locationRequest.setFastestInterval(5000);  // Khoảng thời gian ngắn nhất để nhận dữ liệu
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+        configMap();
+        configMyLocationButton();
+        getMyLocation();
+    }
+
+    private void configMap() {
+        //googleMap.getUiSettings().setZoomGesturesEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+        // googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        googleMap.getUiSettings().setMapToolbarEnabled(false);
+
+        googleMap.setInfoWindowAdapter(new UserInfoWind

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/tbNotification"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+        <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_back"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"/>
+
+        <TextView
+                android:layout_toRightOf="@id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Thông Báo"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:layout_marginLeft="16dp"/>
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvListNotification"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
